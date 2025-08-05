@@ -21,7 +21,7 @@ body {
 }
 
 .header-hero {
-    background: url('https://images.unsplash.com/photo-1492562080023-ab3db95bfbce') no-repeat center center/cover;
+    background: url('myPhoto.jpg') no-repeat center/cover;
 }
 
 header{
