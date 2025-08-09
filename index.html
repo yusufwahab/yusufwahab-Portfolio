@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>I'm Abdulwahab | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+   <link href="./output.css" rel="stylesheet">
 </head>
 <body>
 <!-- Navigation -->
@@ -12,13 +13,20 @@
     <div class="overlay">
    <header>
     <nav class="navbar">
-      <h2 class="logo">Yusuf Abdulwahab Boluwatife</h2>
+      <h2 class="logo">Abdulwahab Boluwatife Yusuf</h2>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#featured-projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <div class="social-media  gap-3 cursor-pointer hidden md:flex">
+        <a href="https://github.com/yusufwahab" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#04f2ff" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.58 0-.287-.011-1.045-.017-2.051-3.338.726-4.042-1.614-4.042-1.614-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.085 1.838 1.237 1.838 1.237 1.07 1.833 2.807 1.304 3.492.997.108-.775.419-1.305.762-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 3.003-.404c1.019.005 2.045.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.654 1.653.243 2.873.12 3.176.77.839 1.235 1.909 1.235 3.22 0 4.609-2.807 5.624-5.479 5.921.43.371.814 1.102.814 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.192.694.801.576C20.565 21.796 24 17.299 24 12c0-6.627-5.373-12-12-12z"></path></svg></a>
+
+        <a href="https://www.linkedin.com/in/abdulwahab-yusuf-285703265" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#04f2ff" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.761 0 5-2.24 5-5v-14c0-2.76-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.29c-.966 0-1.75-.785-1.75-1.75s.784-1.75 1.75-1.75 1.75.785 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.29h-3v-4.5c0-1.105-.895-2-2-2s-2 .895-2 2v4.5h-3v-9h3v1.086c.589-.805 1.52-1.086 2.438-1.086 1.962 0 3.562 1.6 3.562 3.562v5.438z"></path></svg></a>
+
+        <a href="https://x.com/abdulwahab2504" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#04f2ff" viewBox="0 0 16 16"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"></path></svg></a>
+      </div>
     </nav>
   </header> 
 
@@ -35,83 +43,130 @@
 </figure>
 
   <!-- Featured Projects Section -->
-<section id="featured-projects" class="featured-projects">
-  <h2>Featured Projects</h2>
-  <div class="project-showcase">
+<section id="featured-projects" class="featured-projects bg-gray-900 p-10 ">
+  <h2 class="font-bold bg-gradient-to-r from-[#6eedf4]  to-[#5cc3ec] bg-clip-text text-transparent text-3xl font-bold  text-center mt-5">My Projects</h2>
+  <div class="project-showcase grid grid-cols-1 md:grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-10 mt-10 p-5">
 
      <!-- Project 1 -->
-      <div class="project-box">
-      <img src="./Ableton.png" alt="Project 1 Preview" class="project-img">
+      <article class="project-box bg-gray-800 flex align-center justify-around flex-col rounded-xl p-4 h-auto gap-3 outline-2 outline-gray-500 hover:outline-[#04f2ff] cursor-pointer hover:transform hover:scale-105 transition duration-300">
+      <img src="./Ableton.png" alt="Project 1 Preview" class="project-img rounded-t-2xl rounded-b-none">
       <div class="project-info">
-        <h3>RECREATED THE ABLETON WEBSITE HOME PAGE</h3>
-        <p>I recreated the Ableton homepage, replicating its design while adding my own touch of functionality and style. The project includes a responsive layout, smooth animations, and interactive elements, giving it a modern and user-friendly feel.</p>
-        <a href="https://vercel.com/abdulwahab-yusufs-projects/ableton-project-w929" target="_blank">View Project</a>
+        <h3 class="text-white font-bold">RECREATED THE ABLETON WEBSITE HOME PAGE</h3>
+        <p class="text-gray-400 mb-10">I recreated the Ableton homepage, replicating its design while adding my own touch of functionality and style. The project includes a responsive layout, smooth animations, and interactive elements, giving it a modern and user-friendly feel.</p>
+        <a href="https://ableton-project-w929.vercel.app/" target="_blank" class="bg-gradient-to-r from-[#08b1ba]  to-[#5cc3ec] rounded-lg p-2 text-white font-bold text-[12px]">View Project</a>
+        <a href="https://github.com/yusufwahab/ableton-project" target="_blank" class="rounded-lg p-2 bg-gradient-to-r from-[#04575c]  to-[#80888b] text-white ml-3 text-[12px] font-bold">View code</a>
       </div>
+      <div class="stacks flex gap-3 mt-5">
+        <p class=" bg-gray-700 rounded-xl text-[#06dde9] grid place-content-center h-6 w-15 font-[500] text-[12px]">HTML</p>
+        <p class=" bg-gray-700 rounded-xl text-[#06dde9] grid place-content-center h-6 w-15 font-[500] text-[12px]">CSS</p>
+        <p class=" bg-gray-700 rounded-xl text-[#06dde9] grid place-content-center h-6 w-23 font-[500] text-[12px]">JAVASCRIPT</p>
       </div>
+    </article>
 
       <!-- Project 2 -->
-      <div class="project-box">
+      <article class="project-box bg-gray-800 flex align-center justify-around flex-col rounded-xl p-4 h-auto gap-3 outline-2 outline-gray-500 hover:outline-[#04f2ff] cursor-pointer hover:transform hover:scale-105 transition duration-300">
       <img src="./linear.png" alt="Project 2 Preview" class="project-img">
       <div class="project-info">
-        <h3>RECREATED LINEAR.APP WEBSITEI</h3> 
-        <p>I recreated Linear.app website home page with couple of designs, videos as well as functionality using HTML, CSS and JAVASCRIPT</p>
-        <a href="https://vercel.com/abdulwahab-yusufs-projects/linear-app-recreate-c3mh" target="_blank">View Project</a>
+        <h3 class="text-white font-bold">RECREATED LINEAR.APP WEBSITEI</h3> 
+        <p class="text-gray-400 mb-10">I recreated Linear.app website home page with couple of designs, videos as well as functionality using HTML, CSS and JAVASCRIPT</p>
+        <a href="https://linear-app-recreate.vercel.app/" target="_blank" class="bg-gradient-to-r from-[#08b1ba]  to-[#5cc3ec] rounded-lg p-2 text-white font-bold text-[12px]">View Project</a>
+        <a href="https://github.com/yusufwahab/Linear-App-Recreate" target="_blank" class="rounded-lg p-2 bg-gradient-to-r from-[#04575c]  to-[#80888b] text-white ml-3 text-[12px] font-bold">View code</a>
       </div>
+      <div class="stacks flex gap-3 mt-5">
+        <p class=" bg-gray-700 rounded-xl text-[#06dde9] grid place-content-center h-6 w-15 font-[500] text-[12px]">HTML</p>
+        <p class=" bg-gray-700 rounded-xl text-[#06dde9] grid place-content-center h-6 w-15 font-[500] text-[12px]">CSS</p>
+        <p class=" bg-gray-700 rounded-xl text-[#06dde9] grid place-content-center h-6 w-23 font-[500] text-[12px]">JAVASCRIPT</p>
       </div>
+    </article>
 
        <!-- Project 3 -->
-      <div class="project-box">
+      <article class="project-box bg-gray-800 flex align-center justify-around flex-col rounded-xl p-4 h-auto gap-3 outline-2 outline-gray-500 hover:outline-[#04f2ff] cursor-pointer hover:transform hover:scale-105 transition duration-300">
       <img src="./messagingApp.png" alt="Project  Preview" class="project-img">
       <div class="project-info">
-        <h3>RECREATED A MESSAGING APP</h3>
-        <p>Replicate a modern chat interface with precision, using HTML and CSS (specifically Grid, Flex and positioning techniques).</p>
-        <a href="https://ecx-coding-challenge-2-messaging-ap.vercel.app/" target="_blank">View Project</a>
+        <h3 class="text-white font-bold">RECREATED A MESSAGING APP</h3>
+        <p class="text-gray-400 mb-10">Replicate a modern chat interface with precision, using HTML and CSS (specifically Grid, Flex and positioning techniques).</p>
+         <a href="https://ecx-coding-challenge-2-messaging-ap.vercel.app/" target="_blank" class="bg-gradient-to-r from-[#08b1ba]  to-[#5cc3ec] rounded-lg p-2 text-white font-bold text-[12px]">View Project</a>
+        <a href="https://github.com/yusufwahab/ECX-Coding-Challenge-2-Messaging-App-" target="_blank" class="rounded-lg p-2 bg-gradient-to-r from-[#04575c]  to-[#80888b] text-white ml-3 text-[12px] font-bold">View code</a>
       </div>
+      <div class="stacks flex gap-3 mt-5">
+        <p class=" bg-gray-700 rounded-xl text-[#06dde9] grid place-content-center h-6 w-15 font-[500] text-[12px]">HTML</p>
+        <p class=" bg-gray-700 rounded-xl text-[#06dde9] grid place-content-center h-6 w-15 font-[500] text-[12px]">CSS</p>
+        <p class=" bg-gray-700 rounded-xl text-[#06dde9] grid place-content-center h-6 w-23 font-[500] text-[12px]">JAVASCRIPT</p>
       </div>
+      </article>
 
 
     <!-- Project 4 -->
-    <div class="project-box">
-      <img src="./weather.png" alt="Project 4 Preview" class="project-img">
+    <article class="project-box bg-gray-800 flex align-center justify-around flex-col rounded-xl p-4 h-auto gap-3 outline-2 outline-gray-500 hover:outline-[#04f2ff] cursor-pointer hover:transform hover:scale-105 transition duration-300">
+      <img src="./Weather-Ap.png" alt="Project 4 Preview" class="project-img">
       <div class="project-info">
-        <h3>BUILT A WEATHER APP </h3>
-        <p>Built a weather application that consumes a public API and handles asynchronous operations effectively. Task: Develop a weather app where users input a city name or zip code to retrieve current weather data via an API. Display weather information such as temperature, description, and icon. Handled loading states and error conditions gracefully.</p>
-        <a href="https://ecx-weather-app.vercel.app/" target="_blank">View Project</a>
+        <h3 class="text-white font-bold">BUILT A WEATHER APP </h3>
+        <p class="mb-10 text-gray-400">Built a weather application that consumes a public API and handles asynchronous operations effectively. Task: Develop a weather app where users input a city name or zip code to retrieve current weather data via an API. Display weather information such as temperature, description, and icon. Handled loading states and error conditions gracefully.</p>
+        <a href="https://ecx-weather-app.vercel.app/" target="_blank" class="bg-gradient-to-r from-[#08b1ba]  to-[#5cc3ec] rounded-lg p-2 text-white font-bold text-[12px]">View Project</a>
+
+        <a href="https://github.com/yusufwahab/ECX-WEATHER-APP" class="rounded-lg p-2 bg-gradient-to-r from-[#04575c]  to-[#80888b] text-white ml-3 text-[12px] font-bold">View code</a>
       </div>
-    </div>
+      
+      <div class="stacks flex gap-3 mt-5">
+        <p class=" bg-gray-700 rounded-xl text-[#06dde9] grid place-content-center h-6 w-15 font-[500] text-[12px]">HTML</p>
+        <p class=" bg-gray-700 rounded-xl text-[#06dde9] grid place-content-center h-6 w-15 font-[500] text-[12px]">CSS</p>
+        <p class=" bg-gray-700 rounded-xl text-[#06dde9] grid place-content-center h-6 w-23 font-[500] text-[12px]">JAVASCRIPT</p>
+      </div>
+    </article>
 
     <!-- Project 5 -->
-    <div class="project-box">
+    <article class="project-box bg-gray-800 flex align-center justify-around flex-col rounded-xl p-4 h-auto gap-3 outline-2 outline-gray-500 hover:outline-[#04f2ff] cursor-pointer hover:transform hover:scale-105 transition duration-300">
       <img src="./todo.png" alt="Project 5 Preview" class="project-img">
       <div class="project-info">
-        <h3>DYNAMIC TO-DO APP</h3>
-        <p>Built a dynamic and interactive To-Do List application with persistent state management. Objective: Created a fully functional to-do list where users can add, delete, and mark tasks as complete. Implement event listeners for all user interactions and ensured the state is saved and retrieved from local storage, so tasks persist after a page refresh.</p>
-        <a href="https://vercel.com/abdulwahab-yusufs-projects/ecx-challenge-3-todo-website-main" target="_blank">View Project</a>
+        <h3 class="text-white font-bold">DYNAMIC TO-DO APP</h3>
+        <p class="text-gray-400 mb-10">Built a dynamic and interactive To-Do List application with persistent state management. Objective: Created a fully functional to-do list where users can add, delete, and mark tasks as complete. Implement event listeners for all user interactions and ensured the state is saved and retrieved from local storage, so tasks persist after a page refresh.</p>
+        <a href="https://ecx-challenge-3-todo-website-main.vercel.app/" target="_blank" class="bg-gradient-to-r from-[#08b1ba]  to-[#5cc3ec] rounded-lg p-2 text-white font-bold text-[12px]">View Project</a>
+        <a href="https://github.com/yusufwahab/ECX-CHALLENGE--3-TO-DO-LIST-" class="rounded-lg p-2 bg-gradient-to-r from-[#04575c]  to-[#80888b] text-white ml-3 text-[12px] font-bold">View code</a>
       </div>
-    </div>
+      <div class="stacks flex gap-3 mt-5">
+        <p class=" bg-gray-700 rounded-xl text-[#06dde9] grid place-content-center h-6 w-15 font-[500] text-[12px]">HTML</p>
+        <p class=" bg-gray-700 rounded-xl text-[#06dde9] grid place-content-center h-6 w-15 font-[500] text-[12px]">CSS</p>
+        <p class=" bg-gray-700 rounded-xl text-[#06dde9] grid place-content-center h-6 w-23 font-[500] text-[12px]">JAVASCRIPT</p>
+      </div>
+    </article>
 
     <!-- Project 6 -->
-    <div class="project-box">
+    <article class="project-box bg-gray-800 flex align-center justify-around flex-col rounded-xl p-4 h-auto gap-3 outline-2 outline-gray-500 hover:outline-[#04f2ff] cursor-pointer hover:transform hover:scale-105 transition duration-300">
       <img src="./calc.png" alt="Project 6 Preview" class="project-img">
       <div class="project-info">
-        <h3>BUILT A FUNCTIONAL CALCULATOR</h3>
-        <p>Recreated a functional and responsive calculator UI.Objective: Built a calculator app that adjusts to different screen sizes. Implemented core operations (addition, subtraction, multiplication, division) and support a switchable color theme based on user preference.</p>
-        <a href="https://calculator-app-tan-rho.vercel.app/" target="_blank">View Project</a>
+        <h3 class="text-white font-bold">BUILT A FUNCTIONAL CALCULATOR</h3>
+        <p class="text-gray-400 mb-10">Recreated a functional and responsive calculator UI.Objective: Built a calculator app that adjusts to different screen sizes. Implemented core operations (addition, subtraction, multiplication, division) and support a switchable color theme based on user preference.</p>
+        <a href="https://calculator-app-tan-rho.vercel.app/" target="_blank" class="bg-gradient-to-r from-[#08b1ba]  to-[#5cc3ec] rounded-lg p-2 text-white font-bold text-[12px]">View Project</a>
+        <a href="https://github.com/yusufwahab/Calculator-App" class="rounded-lg p-2 bg-gradient-to-r from-[#04575c]  to-[#80888b] text-white ml-3 text-[12px] font-bold">View code</a>
       </div>
-    </div>
+      <div class="stacks flex gap-3 mt-5">
+        <p class=" bg-gray-700 rounded-xl text-[#06dde9] grid place-content-center h-6 w-15 font-[500] text-[12px]">HTML</p>
+        <p class=" bg-gray-700 rounded-xl text-[#06dde9] grid place-content-center h-6 w-15 font-[500] text-[12px]">CSS</p>
+        <p class=" bg-gray-700 rounded-xl text-[#06dde9] grid place-content-center h-6 w-23 font-[500] text-[12px]">JAVASCRIPT</p>
+      </div>
+    </article>
+  </section>
 
     <!--FOOTER-->
-    <footer id="contact">
-  <p>© 2025 Abdulwahab Boluwatife Yusuf. All rights reserved.</p>
-  <nav>
-    <a href="#about">About</a> |
-    <a href="#featured-projects">Projects</a> |
-    <a href="#contact">Contact</a>
-  </nav>
-  <div>
-    <a href="https://github.com/yusufwahab" target="_blank">GitHub</a>
-    <a href="https://linkedin.com/in/abdulwahab-yusuf-285703265" target="_blank">LinkedIn</a>
+    <footer id="contact" class="bg-gray-600 md:flex w-full md:flex-row items-center justify-between p-15 text-white h-70">
+  <div class="flex flex-col gap-10 justify-center items-center">
+  <h1 class=" font-bold bg-gradient-to-r from-[#6eedf4]  to-[#5cc3ec] bg-clip-text text-transparent text-[20px] text-center">Abdulwahab Boluwatife Yusuf</h1>
+  <p class=" text-center sm:text-sm md:text-lg">© 2025 Abdulwahab Boluwatife Yusuf. All rights reserved.</p>
   </div>
+  <nav class="flex flex-col gap-10  items-center sm:items-start">
+    <div>
+    <a href="#about" class="font-bold text-gray-400">About |</a> 
+    <a href="#featured-projects" class="font-bold text-gray-400">Projects |</a> 
+    <a href="#contact" class="font-bold text-gray-400">Contact</a>
+    </div>
+  <div class="social-media  gap-3 cursor-pointer  flex">
+        <a href="https://github.com/yusufwahab" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#D1D5DB" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.111.793-.261.793-.58 0-.287-.011-1.045-.017-2.051-3.338.726-4.042-1.614-4.042-1.614-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.085 1.838 1.237 1.838 1.237 1.07 1.833 2.807 1.304 3.492.997.108-.775.419-1.305.762-1.605-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 3.003-.404c1.019.005 2.045.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.654 1.653.243 2.873.12 3.176.77.839 1.235 1.909 1.235 3.22 0 4.609-2.807 5.624-5.479 5.921.43.371.814 1.102.814 2.222 0 1.606-.015 2.898-.015 3.293 0 .322.192.694.801.576C20.565 21.796 24 17.299 24 12c0-6.627-5.373-12-12-12z"></path></svg></a>
+
+        <a href="https://www.linkedin.com/in/abdulwahab-yusuf-285703265" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#D1D5DB" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.761 0 5-2.24 5-5v-14c0-2.76-2.239-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.29c-.966 0-1.75-.785-1.75-1.75s.784-1.75 1.75-1.75 1.75.785 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.29h-3v-4.5c0-1.105-.895-2-2-2s-2 .895-2 2v4.5h-3v-9h3v1.086c.589-.805 1.52-1.086 2.438-1.086 1.962 0 3.562 1.6 3.562 3.562v5.438z"></path></svg></a>
+
+        <a href="https://x.com/abdulwahab2504" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#D1D5DB" viewBox="0 0 16 16"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"></path></svg></a>
+      </div>
+  </nav>
 </footer>
 </body>
 </html>

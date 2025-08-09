@@ -1,9 +1,8 @@
 
-
 * {
-  margin: 0;
+  /* margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; */
   font-family: 'Segoe UI', sans-serif;
   scroll-behavior: smooth;
 }
@@ -21,7 +20,7 @@ body {
 }
 
 .header-hero {
-    background: url('myPhoto.jpg') no-repeat center/cover;
+    background: url('/Hackathon-img.jpeg') no-repeat center/cover;
 }
 
 header{
@@ -29,19 +28,26 @@ header{
   position: sticky;
   top: 0;
   z-index: 1000;
+  
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
     min-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .logo {
-    color: #ffffff;
-    font-weight: 400;
+    background: linear-gradient(to right,#6eedf4, #04f2ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    font-weight: 700;
 
 }
 
@@ -52,8 +58,12 @@ header{
 }
 .nav-links a {
     text-decoration: none;
-    font-weight: 500;
-    color: #ffffff;
+    font-weight: 700;
+    background: linear-gradient(to right,#6eedf4, #04f2ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
 }
 
 .nav-links a:hover {
@@ -77,7 +87,12 @@ header{
 
 .hero-text h1 {
   font-size: 3.5rem;
-  color:#0077ff;
+  background: linear-gradient(to right,#6eedf4, #04f2ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+
 }
 
 .hero-text h2 {
@@ -94,12 +109,12 @@ header{
 .hero-btn {
   display: inline-block;
   padding: 0.75rem 2rem;
-  background-color: #0077ff;
+   background: linear-gradient(to right, #079da4, #04f2ff);
   color: #ffffff;
   text-decoration: none;
   font-weight: bold;
   border-radius: 30px;
-  transition: background 0.3s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hero-btn:hover {
@@ -108,25 +123,25 @@ header{
 }
 
 .projects .project-grid {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: 2rem; */
 }
 
 .project-card {
-  background-color: #f3f3f3;
+  /* background-color: #f3f3f3;
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease; */
 }
 
 
 
 
-.featured-projects {
+/* .featured-projects {
   padding: 4rem 2rem;
-  background-color: #f0f4f8;
+  background-color: #011831;
   color: #222;
 }
 
@@ -138,11 +153,7 @@ header{
 }
 
 .project-showcase {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: auto;
+  grid-template-columns: 1fr 1fr;
 }
 
 .project-box {
@@ -160,8 +171,8 @@ header{
 }
 
 .project-box img {
-  width: 100%;
-  height: auto;
+  width: 40%;
+  height: 60%;
   display: block;
   cursor: pointer;
 }
@@ -194,13 +205,13 @@ header{
 
 .project-info a:hover {
   background-color: #005edc;
-}
+} */
 
 
 /* FOOTER */
-footer {
+/* footer { */
  /* background-color:#1E293B; */
-display: flex;
+/* display: flex;
 flex-flow: column wrap;
 align-items: center;
 justify-content: center;
@@ -210,7 +221,7 @@ width: 80vw;
 
 footer p {
   font-size: large;
-}
+} */
 
 @media  screen and (max-width:500px) {
   .logo {
@@ -239,7 +250,4 @@ footer > p {
   color: #0077ff;
 }
 
-
-
-  
 }
