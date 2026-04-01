@@ -42,10 +42,22 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-// ── Contact form (basic feedback) ──
-document.getElementById('contact-form').addEventListener('submit', e => {
+// ── Contact form (Formspree) ──
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+contactForm.addEventListener('submit', async e => {
   e.preventDefault();
-  const status = document.getElementById('form-status');
-  status.textContent = 'Thanks for your message! I\'ll be in touch soon.';
-  e.target.reset();
+  const data = new FormData(contactForm);
+  const res = await fetch(contactForm.action, {
+    method: 'POST',
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
+  if (res.ok) {
+    formStatus.textContent = 'Message sent! I\'ll get back to you soon.';
+    contactForm.reset();
+  } else {
+    formStatus.textContent = 'Something went wrong. Please try again or email me directly.';
+  }
 });
