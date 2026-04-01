@@ -1,129 +1,51 @@
-// Dashboard.js
+// ── Dark mode ──
+const themeToggle = document.getElementById('theme-toggle');
+const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>`;
+const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg>`;
 
-import React, { useState, useEffect, useRef } from "react";
-import { useCameraStore } from './store/camera-store';
-import useLoadingStore from './store/loading-store';
-import LogoLoader from './LogoLoader';
-import CameraCard from "./CameraCard";
-import Header from "./Header";
-import PopupModal from "./PopupModal";
-import obexLogo from "./obex-logo.png";
-import './index.css';
-
-import * as cocoSsd from "@tensorflow-models/coco-ssd";
-import "@tensorflow/tfjs";
-import { pipeline } from "@huggingface/transformers";
-import "@tensorflow/tfjs-backend-wasm";
-
-export default function Dashboard() {
-  const videoRef = useRef(null);
-  const canvasRef = useRef(null);
-
-  const [stream, setStream] = useState(null);
-  const [predictions, setPredictions] = useState([]);
-  const [audioLabel, setAudioLabel] = useState("");
-  const [audioScore, setAudioScore] = useState(0);
-
-  const { showLoading, hideLoading } = useLoadingStore();
-  const CameraStreams = useCameraStore(state => state.CameraStreams);
-  const addToCameraStreams = useCameraStore(state => state.addToCameraStreams);
-  const clearCameraStreams = useCameraStore(state => state.clearCameraStreams);
-
-  // Existing start/stop camera
-  const handleStartCamera = async () => {
-    const mediaStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: "user" } });
-    videoRef.current.srcObject = mediaStream;
-    setStream(mediaStream);
-  };
-  const handleStopCamera = () => {
-    stream?.getTracks().forEach(t => t.stop());
-    setStream(null);
-  };
-
-  // 🔍 Object Detection
-  useEffect(() => {
-    let model, interval;
-    const init = async () => {
-      model = await cocoSsd.load();
-      interval = setInterval(async () => {
-        if (videoRef.current) {
-          const preds = await model.detect(videoRef.current);
-          setPredictions(preds);
-        }
-      }, 500);
-    };
-    if (stream) init();
-    return () => clearInterval(interval);
-  }, [stream]);
-
-  // 🎨 Draw detections
-  useEffect(() => {
-    const ctx = canvasRef.current?.getContext("2d");
-    if (!ctx) return;
-    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-    predictions.forEach(pred => {
-      const [x, y, w, h] = pred.bbox;
-      ctx.strokeStyle = "cyan"; ctx.lineWidth = 2;
-      ctx.strokeRect(x, y, w, h);
-      ctx.fillStyle = "cyan"; ctx.font = "14px Arial";
-      ctx.fillText(`${pred.class} ${(pred.score*100).toFixed(1)}%`, x, y > 10 ? y-5 : 10);
-      if (pred.class === "person" && pred.score > 0.9) {
-        console.log("🚨 Person > 90% detected");
-      }
-    });
-  }, [predictions]);
-
-  // 🧠 Audio Classification via HF Transformers.js
-  useEffect(() => {
-    async function initAudio() {
-      const audioPipe = await pipeline('audio-classification', 'superb/hubert-base-superb-er', { progress_callback: null });
-      // continuously listen using Web Audio API
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const audioContext = new AudioContext();
-      const source = audioContext.createMediaStreamSource(stream);
-      const processor = audioContext.createScriptProcessor(4096, 1, 1);
-      source.connect(processor);
-      processor.connect(audioContext.destination);
-      processor.onaudioprocess = async e => {
-        const input = e.inputBuffer.getChannelData(0);
-        const result = await audioPipe(input);
-        if (result && result.length > 0) {
-          const top = result[0];
-          setAudioLabel(top.label);
-          setAudioScore(top.score);
-          if (top.label === "speech" && top.score > 0.9) {
-            alert("🚨 Detected high-confidence speech!");
-          }
-        }
-      };
-    }
-    initAudio();
-  }, []);
-
-  // render UI...
-  return (
-    <>
-      <Header />
-      <LogoLoader />
-      {/* existing modal and layout code... */}
-      <main className="...">
-        {/* your existing Live Feed structure */}
-        <section id="webcam" className="...">
-          <div className="relative ...">
-            { /* camera prompt logic... */ }
-            <video ref={videoRef} autoPlay className="w-full h-full object-cover" />
-            <canvas ref={canvasRef} width={640} height={480}
-              className="absolute top-0 left-0 pointer-events-none" />
-          </div>
-        </section>
-
-        {/* DISPLAY audio label */}
-        <div className="text-white mt-4">
-          🎧 Audio: <strong>{audioLabel}</strong> ({(audioScore*100).toFixed(1)}%)
-        </div>
-
-        {/* remaining UI */}
-      </main>
-    </>
-  );
+function applyTheme(dark) {
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  themeToggle.innerHTML = dark ? sunIcon : moonIcon;
+  localStorage.setItem('theme', dark ? 'dark' : 'light');
 }
+
+const savedTheme = localStorage.getItem('theme');
+applyTheme(savedTheme === 'dark');
+
+themeToggle.addEventListener('click', () => {
+  applyTheme(document.documentElement.getAttribute('data-theme') !== 'dark');
+});
+
+const hamburger = document.getElementById('hamburger');
+const navLinks  = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  hamburger.classList.toggle('open', isOpen);
+  hamburger.setAttribute('aria-expanded', isOpen);
+});
+
+// Close nav when a link is clicked (mobile)
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  });
+});
+
+// ── Scroll fade-in ──
+const observer = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+  { threshold: 0.12 }
+);
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ── Contact form (basic feedback) ──
+document.getElementById('contact-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const status = document.getElementById('form-status');
+  status.textContent = 'Thanks for your message! I\'ll be in touch soon.';
+  e.target.reset();
+});
