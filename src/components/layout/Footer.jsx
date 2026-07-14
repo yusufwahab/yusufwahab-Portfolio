@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { FaGithub, FaLinkedin, FaXTwitter, FaRegEnvelope } from 'react-icons/fa6'
 import { profile } from '../../data/profile'
 
 export default function Footer() {
@@ -11,7 +12,7 @@ export default function Footer() {
           <div className="max-w-sm">
             <p className="font-mono text-sm text-[var(--text)]">{profile.name}</p>
             <p className="mt-2 text-sm leading-relaxed text-[var(--text-dim)]">
-              Full-stack software engineer — web &amp; mobile. Currently building — always open to new work.
+              Full-stack software engineer, web &amp; mobile. Currently building, always open to new work.
             </p>
           </div>
 
@@ -34,16 +35,38 @@ export default function Footer() {
 
             <div className="flex flex-col gap-2">
               <span className="eyebrow mb-1">Elsewhere</span>
-              <a href={profile.github} target="_blank" rel="noopener" className="text-sm text-[var(--text-dim)] hover:text-[var(--text)]">
+              <a
+                href={profile.github}
+                target="_blank"
+                rel="noopener"
+                className="flex items-center gap-2 text-sm text-[var(--text-dim)] hover:text-[var(--text)]"
+              >
+                <FaGithub className="h-4 w-4 shrink-0" aria-hidden="true" />
                 GitHub
               </a>
-              <a href={profile.linkedin} target="_blank" rel="noopener" className="text-sm text-[var(--text-dim)] hover:text-[var(--text)]">
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noopener"
+                className="flex items-center gap-2 text-sm text-[var(--text-dim)] hover:text-[var(--text)]"
+              >
+                <FaLinkedin className="h-4 w-4 shrink-0" aria-hidden="true" />
                 LinkedIn
               </a>
-              <a href={profile.twitter} target="_blank" rel="noopener" className="text-sm text-[var(--text-dim)] hover:text-[var(--text)]">
+              <a
+                href={profile.twitter}
+                target="_blank"
+                rel="noopener"
+                className="flex items-center gap-2 text-sm text-[var(--text-dim)] hover:text-[var(--text)]"
+              >
+                <FaXTwitter className="h-4 w-4 shrink-0" aria-hidden="true" />
                 X / Twitter
               </a>
-              <a href={`mailto:${profile.email}`} className="text-sm text-[var(--text-dim)] hover:text-[var(--text)]">
+              <a
+                href={`mailto:${profile.email}`}
+                className="flex items-center gap-2 text-sm text-[var(--text-dim)] hover:text-[var(--text)]"
+              >
+                <FaRegEnvelope className="h-4 w-4 shrink-0" aria-hidden="true" />
                 {profile.email}
               </a>
             </div>

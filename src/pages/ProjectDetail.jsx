@@ -123,7 +123,7 @@ export default function ProjectDetail() {
           {project.gallery.length > 0 ? (
             <Lightbox images={project.gallery} />
           ) : (
-            <p className="text-sm text-[var(--text-dim)]">Screenshots pending — not yet supplied.</p>
+            <p className="text-sm text-[var(--text-dim)]">Screenshots pending, not yet supplied.</p>
           )}
         </section>
       </Reveal>

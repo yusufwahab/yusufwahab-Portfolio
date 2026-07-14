@@ -70,17 +70,17 @@ export default function Contact() {
               </li>
               <li>
                 <a href={profile.github} target="_blank" rel="noopener" className="text-sm text-[var(--text)] hover:text-[var(--accent)]">
-                  GitHub — {profile.github.replace('https://', '')}
+                  GitHub: {profile.github.replace('https://', '')}
                 </a>
               </li>
               <li>
                 <a href={profile.linkedin} target="_blank" rel="noopener" className="text-sm text-[var(--text)] hover:text-[var(--accent)]">
-                  LinkedIn — {profile.linkedin.replace('https://www.', '')}
+                  LinkedIn: {profile.linkedin.replace('https://www.', '')}
                 </a>
               </li>
               <li>
                 <a href={profile.twitter} target="_blank" rel="noopener" className="text-sm text-[var(--text)] hover:text-[var(--accent)]">
-                  X / Twitter — {profile.twitter.replace('https://', '')}
+                  X / Twitter: {profile.twitter.replace('https://', '')}
                 </a>
               </li>
               <li>

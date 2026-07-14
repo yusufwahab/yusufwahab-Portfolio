@@ -19,7 +19,7 @@ export default function Home() {
             <p className="eyebrow mb-3">About</p>
             <p className="max-w-sm text-sm leading-relaxed text-[var(--text-dim)]">
               Full-stack software engineer, self-taught, currently studying Metallurgical &amp; Materials
-              Engineering at the University of Lagos — bringing an engineer's rigour to every product shipped.
+              Engineering at the University of Lagos, bringing an engineer's rigour to every product shipped.
             </p>
             <Link to="/about" className="mt-4 inline-block font-mono text-sm text-[var(--accent)] hover:underline">
               Read more →

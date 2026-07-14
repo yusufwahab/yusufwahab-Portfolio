@@ -63,7 +63,7 @@ const newProjects = [
     gallery: [{ src: traxsCover, alt: 'Traxs Lagos mobility intelligence dashboard' }],
     codeSnippet: {
       language: 'yaml',
-      caption: 'Illustrative — EventBridge schedule pattern used for mobility snapshots',
+      caption: 'Illustrative: EventBridge schedule pattern used for mobility snapshots',
       code: `functions:
   mobilitySnapshot:
     handler: handlers/snapshot.run
@@ -79,7 +79,7 @@ const newProjects = [
     tagline: 'AI-powered financial trust verification platform',
     oneLiner: 'Fraud-ring detection and entity trust scoring via network analysis, with consequences executed through real payment infra.',
     overview:
-      "VERA is a financial trust verification platform that scores the trustworthiness of financial entities. It combines graph analysis over a network of transactions and relationships with anomaly detection to surface fraud rings, then acts on those findings — financial consequences are executed through Squad's payment infrastructure rather than just flagged in a report.",
+      "VERA is a financial trust verification platform that scores the trustworthiness of financial entities. It combines graph analysis over a network of transactions and relationships with anomaly detection to surface fraud rings, then acts on those findings: financial consequences are executed through Squad's payment infrastructure rather than just flagged in a report.",
     liveUrl: 'https://vera-delta-seven.vercel.app/',
     githubUrl: 'https://github.com/Techdee1/VERA',
     featured: true,
@@ -111,7 +111,7 @@ const newProjects = [
     gallery: [{ src: veraCover, alt: 'VERA financial trust verification platform' }],
     codeSnippet: {
       language: 'python',
-      caption: 'Illustrative — anomaly scoring shape used for entity trust scoring',
+      caption: 'Illustrative: anomaly scoring shape used for entity trust scoring',
       code: `from sklearn.ensemble import IsolationForest
 
 model = IsolationForest(contamination=0.05, random_state=42)
@@ -153,7 +153,7 @@ is_flagged = model.predict(entity_features) == -1`,
     tagline: 'User modeling and recommendation system',
     oneLiner: 'Builds a structured psychological profile from review history to power review simulation and agentic recommendation.',
     overview:
-      "PERSONA builds a structured psychological profile of a user from their review history, then uses that profile to power two things: review simulation — a predicted rating, a reasoning trace, and a generated review written in the user's own voice — and agentic recommendation — ranked items with per-item explanations and a full agent step trace. It was built for the DSN × Bluechip Tech LLM Agent Challenge at the Data & AI Summit Hackathon 3.0.",
+      "PERSONA builds a structured psychological profile of a user from their review history, then uses that profile to power two things: review simulation, a predicted rating, a reasoning trace, and a generated review written in the user's own voice; and agentic recommendation, ranked items with per-item explanations and a full agent step trace. It was built for the DSN × Bluechip Tech LLM Agent Challenge at the Data & AI Summit Hackathon 3.0.",
     liveUrl: 'https://persona-eight-flax.vercel.app/',
     githubUrl: 'https://github.com/Techdee1/Persona',
     featured: true,
@@ -320,7 +320,7 @@ const existingProjects = [
     tagline: 'Data Access Platform',
     oneLiner: 'Lets users monitor and control how companies use their personal data.',
     overview:
-      'TrustBridge lets users monitor and control how companies use their personal data — built around transparency, user control, and privacy compliance.',
+      'TrustBridge lets users monitor and control how companies use their personal data, built around transparency, user control, and privacy compliance.',
     liveUrl: 'https://trust-bridge-tawny.vercel.app/',
     githubUrl: 'https://github.com/yusufwahab/TrustBridge',
     featured: false,
@@ -343,7 +343,7 @@ const existingProjects = [
     tagline: 'Homepage Recreation',
     oneLiner: 'Pixel-accurate recreation of the Linear.app homepage with video integration and smooth transitions.',
     overview:
-      'A pixel-accurate recreation of the Linear.app homepage, including video integration, smooth transitions, and interactive elements — a front-end craft exercise in matching a highly polished reference design.',
+      'A pixel-accurate recreation of the Linear.app homepage, including video integration, smooth transitions, and interactive elements: a front-end craft exercise in matching a highly polished reference design.',
     liveUrl: 'https://linear-app-recreate.vercel.app/',
     githubUrl: 'https://github.com/yusufwahab/Linear-App-Recreate',
     featured: false,

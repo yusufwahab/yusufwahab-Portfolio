@@ -10,11 +10,13 @@ import allonPitchImg from '../assets/achievements/allon-hackathon-pitch.jpg'
 import allonPrizeImg from '../assets/achievements/allon-hackathon-prize.jpg'
 import msftWinnerImg from '../assets/achievements/microsoft-ai-skills-winner.jpg'
 import msftStageImg from '../assets/achievements/microsoft-ai-skills-stage.jpg'
+import ecocyclersImg from '../assets/achievements/ecocyclers-bemint-hackathon.jpg'
+import bemintTeamImg from '../assets/achievements/bemint-hackathon-team.jpg'
 
 export const profile = {
   name: 'Abdulwahab Yusuf',
   fullName: 'Abdulwahab Boluwatife Yusuf',
-  role: 'Software Engineer — Full-stack Web & Mobile',
+  role: 'Software Engineer, Full-stack Web & Mobile',
   availability: 'Available for work',
   email: 'yabvil25@gmail.com',
   github: 'https://github.com/yusufwahab',
@@ -26,15 +28,15 @@ export const profile = {
 }
 
 export const heroCopy = {
-  eyebrow: 'Software Engineer — Full-stack Web & Mobile App Dev.',
+  eyebrow: 'Software Engineer, Full-stack Web & Mobile App Dev.',
   headline: 'I build software that has to hold up in the real world.',
-  sub: "Full-stack engineer working end to end across web, mobile, and applied AI/ML — self-taught and focused on shipping things that work. I've launched Classence, an all-inclusive personalized learning platform, plus several other live products spanning realtime dashboards, AI tools, and fintech.",
+  sub: "Full-stack engineer working end to end across web, mobile, and applied AI/ML, self-taught and focused on shipping things that work. I've launched Classence, an all-inclusive personalized learning platform, plus several other live products spanning realtime dashboards, AI tools, and fintech.",
 }
 
 // Bio text carried over from the existing site's Contact/About copy.
 export const bio = [
-  "I'm a software engineer focused on full-stack web and mobile app development — skilled in React, Node.js, React Native, and modern web and mobile technologies. I'm currently studying Metallurgical & Materials Engineering at the University of Lagos. I crossed disciplines by choice, and I bring an engineer's rigour to every line of code I write.",
-  "Self-taught from the ground up, I build complete digital products — from pixel-perfect frontends and robust backends to cross-platform mobile apps. I've won two hackathons, shipped real products, and I'm always open to new opportunities, collaborations, or just a good conversation about tech.",
+  "I'm a software engineer focused on full-stack web and mobile app development, skilled in React, Next.js, TypeScript, Node.js, Python, PostgreSQL, React Native, and Flutter. I'm currently studying Metallurgical & Materials Engineering at the University of Lagos. I crossed disciplines by choice, and I bring an engineer's rigour to every line of code I write.",
+  "Self-taught from the ground up, I build complete digital products, from pixel-perfect frontends and robust backends to cross-platform mobile apps. I've won two hackathons, shipped real products, and I'm always open to new opportunities, collaborations, or just a good conversation about tech.",
 ]
 
 export const experience = [
@@ -98,18 +100,19 @@ export const experience = [
 
 export const achievements = [
   {
-    title: '2x Hackathon Winner',
+    title: '5x Hackathon Winner',
     description:
-      'First place in two separate hackathons for innovative software solutions — competing against teams across Nigeria and delivering production-ready products under tight deadlines.',
+      'First place in five separate hackathons for innovative software solutions, competing against teams across Nigeria and delivering production-ready products under tight deadlines.',
+    coverAsBackground: true,
     images: [
-      { src: hackathonImg, alt: '2x Hackathon Winner' },
-      {
-        src: msftWinnerImg,
-        alt: 'Team holding the Winner banner at the Microsoft AI Skills Hackathon 2026, AI Skills Week Lagos',
-      },
       {
         src: msftStageImg,
         alt: 'On stage with the winning team at Microsoft AI Skills Week Lagos 2026',
+      },
+      { src: hackathonImg, alt: '5x Hackathon Winner' },
+      {
+        src: msftWinnerImg,
+        alt: 'Team holding the Winner banner at the Microsoft AI Skills Hackathon 2026, AI Skills Week Lagos',
       },
       {
         src: allonPrizeImg,
@@ -118,6 +121,14 @@ export const achievements = [
       {
         src: allonPitchImg,
         alt: 'Team pitching at the AllOn 10th Anniversary Renewable Energy Hackathon',
+      },
+      {
+        src: ecocyclersImg,
+        alt: 'EcoCyclers team hackathon pitch closing slide, powered by Be-Mint 2.0',
+      },
+      {
+        src: bemintTeamImg,
+        alt: 'Team standing in front of Be-MINT sustainable development through STEM/AI/T education banners',
       },
     ],
   },

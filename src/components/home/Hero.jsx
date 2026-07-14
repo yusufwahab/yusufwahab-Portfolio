@@ -27,12 +27,26 @@ function TerminalStrip() {
 export default function Hero() {
   return (
     <section className="mx-auto max-w-[1140px] px-6 pb-16 pt-20 sm:pt-28">
-      <div className="grid grid-cols-1 items-center gap-10 sm:grid-cols-[1fr_220px] sm:gap-12 lg:grid-cols-[1fr_340px]">
+      <div className="grid grid-cols-1 items-start gap-10 sm:grid-cols-[1fr_220px] sm:gap-12 lg:grid-cols-[1fr_340px]">
         <div>
           <p className="eyebrow mb-5">{heroCopy.eyebrow}</p>
           <h1 className="max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-[var(--text)] sm:text-5xl">
             {heroCopy.headline}
           </h1>
+
+          <p className="mt-[3px] max-w-xl text-base leading-relaxed text-[var(--text-dim)]">{heroCopy.sub}</p>
+
+          <div className="mt-8 flex flex-wrap items-center gap-6">
+            <Link
+              to="/work"
+              className="border border-[var(--accent)] bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-[var(--bg)] transition-opacity hover:opacity-90"
+            >
+              View Work →
+            </Link>
+            <Link to="/about" className="text-sm font-medium text-[var(--text-dim)] hover:text-[var(--text)]">
+              About →
+            </Link>
+          </div>
         </div>
 
         <img
@@ -40,20 +54,6 @@ export default function Hero() {
           alt={profile.fullName}
           className="order-first aspect-[4/5] w-full max-w-[220px] border border-[var(--line)] object-cover sm:order-last sm:max-w-none lg:max-w-none"
         />
-      </div>
-
-      <p className="mt-[3px] max-w-xl text-base leading-relaxed text-[var(--text-dim)]">{heroCopy.sub}</p>
-
-      <div className="mt-8 flex flex-wrap items-center gap-6">
-        <Link
-          to="/work"
-          className="border border-[var(--accent)] bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-[var(--bg)] transition-opacity hover:opacity-90"
-        >
-          View Work →
-        </Link>
-        <Link to="/about" className="text-sm font-medium text-[var(--text-dim)] hover:text-[var(--text)]">
-          About →
-        </Link>
       </div>
 
       <div className="mt-12">

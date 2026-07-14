@@ -128,9 +128,21 @@ export default function About() {
                 <button
                   type="button"
                   onClick={() => setLightbox({ achievementIndex: i, imageIndex: 0 })}
-                  className="relative block w-full cursor-pointer"
+                  aria-label={a.images[0].alt}
+                  className="relative block aspect-video w-full cursor-pointer"
+                  style={
+                    a.coverAsBackground
+                      ? {
+                          backgroundImage: `url(${a.images[0].src})`,
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center',
+                        }
+                      : undefined
+                  }
                 >
-                  <img src={a.images[0].src} alt={a.images[0].alt} className="aspect-video w-full object-cover" />
+                  {!a.coverAsBackground && (
+                    <img src={a.images[0].src} alt={a.images[0].alt} className="h-full w-full object-cover" />
+                  )}
                   {a.images.length > 1 && (
                     <span className="absolute bottom-2 right-2 border border-[var(--line)] bg-[var(--bg)]/85 px-2 py-0.5 font-mono text-[0.65rem] text-[var(--text-dim)]">
                       +{a.images.length - 1} photos

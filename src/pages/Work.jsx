@@ -18,7 +18,7 @@ export default function Work() {
     <div className="mx-auto max-w-[1140px] px-6 py-20">
       <p className="eyebrow mb-3">Work</p>
       <h1 className="mb-10 max-w-xl text-2xl font-semibold tracking-tight text-[var(--text)] sm:text-3xl">
-        All projects — filter by category, or scan the list view.
+        All projects, filter by category, or scan the list view.
       </h1>
 
       <ProjectFilterBar active={category} onChange={setCategory} view={view} onViewChange={setView} />

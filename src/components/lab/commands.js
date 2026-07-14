@@ -20,7 +20,7 @@ export function runCommand(raw, { navigate }) {
   }
 
   if (lower === 'whoami') {
-    return { lines: [`${profile.fullName} — ${profile.role}`, ...bio] }
+    return { lines: [`${profile.fullName}: ${profile.role}`, ...bio] }
   }
 
   if (lower === 'ls projects') {
@@ -42,7 +42,7 @@ export function runCommand(raw, { navigate }) {
     }
     return {
       lines: [
-        `${project.name} — ${project.oneLiner}`,
+        `${project.name}: ${project.oneLiner}`,
         project.stackTags.join(' · '),
         `open ${project.slug}  →  view full case study`,
       ],

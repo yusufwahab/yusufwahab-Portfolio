@@ -83,7 +83,7 @@ export default function Terminal() {
         <span className="h-2.5 w-2.5 rounded-full bg-[var(--text-dim)]" />
         <span className="h-2.5 w-2.5 rounded-full bg-[var(--text-dim)]" />
         <span className="h-2.5 w-2.5 rounded-full bg-[var(--accent)]" />
-        <span className="ml-2 text-xs text-[var(--text-dim)]">guest@abdulwahab — lab</span>
+        <span className="ml-2 text-xs text-[var(--text-dim)]">guest@abdulwahab: lab</span>
       </div>
 
       <div ref={scrollRef} className="flex-1 space-y-1 overflow-y-auto p-4" aria-live="polite">
