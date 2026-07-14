@@ -95,9 +95,11 @@ export default function About() {
                   <span className="text-base font-semibold text-[var(--text)]">{job.company}</span>
                   <span className="font-mono text-xs uppercase tracking-widest text-[var(--text-dim)]">{job.focus}</span>
                   <p className="text-sm text-[var(--text-dim)]">{job.about}</p>
-                  <span className="w-fit border border-[var(--line)] px-2 py-0.5 font-mono text-[0.65rem] uppercase tracking-widest text-[var(--text-dim)]">
-                    {job.badge}
-                  </span>
+                  {job.badge && (
+                    <span className="w-fit border border-[var(--line)] px-2 py-0.5 font-mono text-[0.65rem] uppercase tracking-widest text-[var(--text-dim)]">
+                      {job.badge}
+                    </span>
+                  )}
                 </div>
                 <div>
                   <h3 className="mb-3 text-base font-semibold text-[var(--text)]">{job.title}</h3>

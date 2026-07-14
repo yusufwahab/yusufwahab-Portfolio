@@ -42,11 +42,25 @@ export const bio = [
 export const experience = [
   {
     date: '2025 – Present',
+    company: 'CLASSENCE',
+    focus: 'EdTech & Adaptive Learning',
+    about: 'Leading the technical architecture and partner framework design for an adaptive learning platform built to transform modern education.',
+    badge: 'Full-time',
+    title: 'Founder & Technical Lead',
+    bullets: [
+      'Spearheaded the technical vision, architectural design, and operational strategy from inception to build a scalable, adaptive learning platform',
+      'Engineered core platform capabilities and system frameworks, prioritizing performance, clean code structures, and seamless user experiences',
+      'Coordinated and led volunteer developers and contributors, aligning tasks and maintaining code quality to drive collaborative product development',
+      'Orchestrated community outreach initiatives to gather critical user feedback, ensuring platform features directly addressed the needs of educators and students',
+    ],
+  },
+  {
+    date: '2025 – Present',
     company: 'RAOATECH',
     focus: 'Software & App Development',
     about: 'Providing cutting-edge desktop and mobile applications to help organisations become top players in their industries.',
     badge: 'Part-time',
-    title: 'Software Developer',
+    title: 'Software Engineer',
     bullets: [
       'Developed a cross-platform mobile application using React Native and Expo, delivering a responsive and consistent experience across iOS and Android',
       'Designed and implemented backend services, including APIs and database management, to power core application functionality',
@@ -66,6 +80,20 @@ export const experience = [
       'Optimised database queries and improved overall application performance',
       'Integrated third-party APIs for endpoint connection and user authentication',
       'Conducted code reviews with a small dev team to ensure best practices',
+    ],
+  },
+  {
+    date: '2025 – Present',
+    company: 'THE MASTERMIND NETWORK',
+    focus: 'Technical Leadership & Community Architecture',
+    about: 'Building a digital platform and development framework to help ambitious students connect, collaborate, and build software together.',
+    badge: '',
+    title: 'Technical Lead',
+    bullets: [
+      "Led the development of the community's mobile and web applications using React Native and Expo to keep members connected",
+      'Built a centralized API structure to make it easy for students to share and find tech opportunities without delays',
+      'Set up clean code standards and written workflows so the developer team can build and ship features quickly without needing constant meetings',
+      'Created starter code templates and setup tools to help teams build and launch prototype apps rapidly for hackathons',
     ],
   },
   {

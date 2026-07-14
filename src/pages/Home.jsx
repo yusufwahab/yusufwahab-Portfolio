@@ -46,7 +46,7 @@ export default function Home() {
           </div>
           <Link
             to="/contact"
-            className="border border-[var(--accent)] bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-[var(--bg)] transition-opacity hover:opacity-90"
+            className="border border-[var(--accent)] bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-black transition-opacity hover:opacity-90"
           >
             Get in touch →
           </Link>

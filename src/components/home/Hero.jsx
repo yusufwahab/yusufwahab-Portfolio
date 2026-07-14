@@ -39,7 +39,7 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap items-center gap-6">
             <Link
               to="/work"
-              className="border border-[var(--accent)] bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-[var(--bg)] transition-opacity hover:opacity-90"
+              className="border border-[var(--accent)] bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-black transition-opacity hover:opacity-90"
             >
               View Work →
             </Link>

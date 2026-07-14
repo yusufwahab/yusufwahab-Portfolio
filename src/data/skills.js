@@ -16,7 +16,7 @@ export const capabilities = [
   },
   {
     label: 'Data & AI',
-    items: ['PostgreSQL', 'DynamoDB', 'Neo4j AuraDB', 'Redis', 'Amazon Bedrock', 'scikit-learn'],
+    items: ['PostgreSQL', 'MongoDB', 'DynamoDB', 'Neo4j AuraDB', 'Redis', 'Amazon Bedrock', 'scikit-learn'],
   },
   {
     label: 'Cloud & Infra',
@@ -56,6 +56,7 @@ export const technicalCapabilities = [
     label: 'Data & AI',
     items: [
       'PostgreSQL',
+      'MongoDB',
       'DynamoDB',
       'Neo4j AuraDB (graph)',
       'Redis',
