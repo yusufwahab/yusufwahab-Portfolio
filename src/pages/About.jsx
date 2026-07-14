@@ -1,8 +1,12 @@
+import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { bio, experience, achievements, aboutStats, profile } from '../data/profile'
 import { technicalCapabilities } from '../data/skills'
+import { getSkillIcon } from '../data/skillIcons'
 import Reveal from '../components/layout/Reveal'
 
 export default function About() {
+  const [lightbox, setLightbox] = useState(null) // { achievementIndex, imageIndex }
   return (
     <div className="mx-auto max-w-[1140px] px-6 py-20">
       <Reveal>
@@ -62,11 +66,15 @@ export default function About() {
             <Reveal key={group.label} index={i}>
               <h3 className="mb-4 font-mono text-xs uppercase tracking-widest text-[var(--text-dim)]">{group.label}</h3>
               <ul className="flex flex-col gap-2">
-                {group.items.map((item) => (
-                  <li key={item} className="font-mono text-sm text-[var(--text)]">
-                    {item}
-                  </li>
-                ))}
+                {group.items.map((item) => {
+                  const Icon = getSkillIcon(item)
+                  return (
+                    <li key={item} className="flex items-center gap-2 font-mono text-sm text-[var(--text)]">
+                      {Icon && <Icon className="h-3.5 w-3.5 shrink-0 text-[var(--text-dim)]" aria-hidden="true" />}
+                      <span>{item}</span>
+                    </li>
+                  )
+                })}
               </ul>
             </Reveal>
           ))}
@@ -117,7 +125,18 @@ export default function About() {
           {achievements.map((a, i) => (
             <Reveal key={a.title} index={i}>
               <article className="border border-[var(--line)]">
-                <img src={a.image} alt={a.alt} className="aspect-video w-full object-cover" />
+                <button
+                  type="button"
+                  onClick={() => setLightbox({ achievementIndex: i, imageIndex: 0 })}
+                  className="relative block w-full cursor-pointer"
+                >
+                  <img src={a.images[0].src} alt={a.images[0].alt} className="aspect-video w-full object-cover" />
+                  {a.images.length > 1 && (
+                    <span className="absolute bottom-2 right-2 border border-[var(--line)] bg-[var(--bg)]/85 px-2 py-0.5 font-mono text-[0.65rem] text-[var(--text-dim)]">
+                      +{a.images.length - 1} photos
+                    </span>
+                  )}
+                </button>
                 <div className="p-4">
                   <h3 className="mb-2 text-sm font-semibold text-[var(--text)]">{a.title}</h3>
                   <p className="text-sm leading-relaxed text-[var(--text-dim)]">{a.description}</p>
@@ -127,6 +146,69 @@ export default function About() {
           ))}
         </div>
       </section>
+
+      <AnimatePresence>
+        {lightbox && (
+          <motion.div
+            className="fixed inset-0 z-[100] flex flex-col items-center justify-center gap-4 bg-black/85 p-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setLightbox(null)}
+          >
+            <img
+              src={achievements[lightbox.achievementIndex].images[lightbox.imageIndex].src}
+              alt={achievements[lightbox.achievementIndex].images[lightbox.imageIndex].alt}
+              className="max-h-[75vh] max-w-full object-contain"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <p className="max-w-lg text-center text-sm text-[var(--text-dim)]">
+              {achievements[lightbox.achievementIndex].images[lightbox.imageIndex].alt}
+            </p>
+
+            {achievements[lightbox.achievementIndex].images.length > 1 && (
+              <div className="flex items-center gap-6 font-mono text-sm text-white" onClick={(e) => e.stopPropagation()}>
+                <button
+                  type="button"
+                  className="cursor-pointer hover:text-[var(--accent)]"
+                  onClick={() =>
+                    setLightbox((l) => {
+                      const total = achievements[l.achievementIndex].images.length
+                      return { ...l, imageIndex: (l.imageIndex - 1 + total) % total }
+                    })
+                  }
+                >
+                  ← Prev
+                </button>
+                <span className="text-[var(--text-dim)]">
+                  {lightbox.imageIndex + 1} / {achievements[lightbox.achievementIndex].images.length}
+                </span>
+                <button
+                  type="button"
+                  className="cursor-pointer hover:text-[var(--accent)]"
+                  onClick={() =>
+                    setLightbox((l) => {
+                      const total = achievements[l.achievementIndex].images.length
+                      return { ...l, imageIndex: (l.imageIndex + 1) % total }
+                    })
+                  }
+                >
+                  Next →
+                </button>
+              </div>
+            )}
+
+            <button
+              type="button"
+              onClick={() => setLightbox(null)}
+              aria-label="Close image"
+              className="absolute right-6 top-6 cursor-pointer font-mono text-sm text-white"
+            >
+              Close
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }

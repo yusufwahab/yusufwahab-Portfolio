@@ -4,7 +4,11 @@
 export const capabilities = [
   {
     label: 'Frontend',
-    items: ['React', 'Vite', 'Tailwind CSS', 'Zustand', 'TanStack Query', 'Recharts', 'D3.js'],
+    items: ['React', 'Next.js', 'TypeScript', 'Vite', 'Tailwind CSS', 'Zustand', 'TanStack Query'],
+  },
+  {
+    label: 'Mobile',
+    items: ['React Native', 'Expo', 'Flutter', 'Dart'],
   },
   {
     label: 'Backend',
@@ -26,7 +30,7 @@ export const technicalCapabilities = [
     label: 'Frontend',
     items: [
       'React (18/19)',
-      'React Native / Expo',
+      'Next.js',
       'TypeScript',
       'Vite',
       'React Router',
@@ -39,6 +43,10 @@ export const technicalCapabilities = [
       'D3.js',
       'react-leaflet / Leaflet',
     ],
+  },
+  {
+    label: 'Mobile',
+    items: ['React Native', 'Expo', 'React Navigation', 'Flutter', 'Dart'],
   },
   {
     label: 'Backend',

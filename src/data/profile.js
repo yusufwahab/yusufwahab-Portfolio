@@ -6,6 +6,10 @@ import portrait from '../assets/profile/portrait.jpg'
 import hackathonImg from '../assets/achievements/hackathon-win.jpg'
 import beMintImg from '../assets/achievements/be-mint.jpeg'
 import ecxImg from '../assets/achievements/ecx.jpg'
+import allonPitchImg from '../assets/achievements/allon-hackathon-pitch.jpg'
+import allonPrizeImg from '../assets/achievements/allon-hackathon-prize.jpg'
+import msftWinnerImg from '../assets/achievements/microsoft-ai-skills-winner.jpg'
+import msftStageImg from '../assets/achievements/microsoft-ai-skills-stage.jpg'
 
 export const profile = {
   name: 'Abdulwahab Yusuf',
@@ -22,7 +26,7 @@ export const profile = {
 }
 
 export const heroCopy = {
-  eyebrow: 'Software Engineer — Full-stack Web & Mobile',
+  eyebrow: 'Software Engineer — Full-stack Web & Mobile App Dev.',
   headline: 'I build realtime data platforms, applied AI/ML products, and fintech infrastructure.',
   sub: "Self-taught, engineering-minded, and focused on shipping things that actually work — from realtime dashboards and mobile apps to AI-powered platforms and payment infrastructure. Six shipped products, each with real users.",
 }
@@ -97,20 +101,35 @@ export const achievements = [
     title: '2x Hackathon Winner',
     description:
       'First place in two separate hackathons for innovative software solutions — competing against teams across Nigeria and delivering production-ready products under tight deadlines.',
-    image: hackathonImg,
-    alt: '2x Hackathon Winner',
+    images: [
+      { src: hackathonImg, alt: '2x Hackathon Winner' },
+      {
+        src: msftWinnerImg,
+        alt: 'Team holding the Winner banner at the Microsoft AI Skills Hackathon 2026, AI Skills Week Lagos',
+      },
+      {
+        src: msftStageImg,
+        alt: 'On stage with the winning team at Microsoft AI Skills Week Lagos 2026',
+      },
+      {
+        src: allonPrizeImg,
+        alt: 'Team with solar panel hackathon prizes at the AllOn Renewable Energy Hackathon',
+      },
+      {
+        src: allonPitchImg,
+        alt: 'Team pitching at the AllOn 10th Anniversary Renewable Energy Hackathon',
+      },
+    ],
   },
   {
     title: 'President, Be-Mint Empowerment Program',
     description: 'Led initiatives to empower participants and drive measurable program impact across the organisation.',
-    image: beMintImg,
-    alt: 'President, Be-Mint Empowerment Program',
+    images: [{ src: beMintImg, alt: 'President, Be-Mint Empowerment Program' }],
   },
   {
     title: 'UNILAG Engineering Coding Challenge (ECX)',
     description: 'Competed university-wide, demonstrating strong technical and problem-solving skills among engineering peers.',
-    image: ecxImg,
-    alt: 'UNILAG Engineering Coding Challenge',
+    images: [{ src: ecxImg, alt: 'UNILAG Engineering Coding Challenge' }],
   },
 ]
 

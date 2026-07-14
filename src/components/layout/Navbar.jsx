@@ -64,7 +64,7 @@ export default function Navbar() {
             type="button"
             onClick={toggle}
             aria-label="Toggle color theme"
-            className="font-mono text-xs uppercase tracking-widest text-[var(--text-dim)] transition-colors hover:text-[var(--text)]"
+            className="cursor-pointer font-mono text-xs uppercase tracking-widest text-[var(--text-dim)] transition-colors hover:text-[var(--text)]"
           >
             {theme === 'dark' ? 'Light' : 'Dark'}
           </button>
@@ -72,7 +72,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="font-mono text-xs uppercase tracking-widest text-[var(--text)] sm:hidden"
+          className="cursor-pointer font-mono text-xs uppercase tracking-widest text-[var(--text)] sm:hidden"
           aria-expanded={menuOpen}
           aria-controls="mobile-nav"
           onClick={() => setMenuOpen((v) => !v)}
@@ -108,7 +108,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={toggle}
-                className="font-mono text-xs uppercase tracking-widest text-[var(--text-dim)]"
+                className="cursor-pointer font-mono text-xs uppercase tracking-widest text-[var(--text-dim)]"
               >
                 {theme === 'dark' ? 'Light' : 'Dark'}
               </button>
