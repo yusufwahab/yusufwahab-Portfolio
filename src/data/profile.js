@@ -28,9 +28,9 @@ export const profile = {
 }
 
 export const heroCopy = {
-  eyebrow: 'Software Engineer, Full-stack Web & Mobile App Dev.',
+  eyebrow: 'Software Engineer',
   headline: 'I build software that has to hold up in the real world.',
-  sub: "Full-stack engineer working end to end across web, mobile, and applied AI/ML, self-taught and focused on shipping things that work. I've launched Classence, an all-inclusive personalized learning platform, plus several other live products spanning realtime dashboards, AI tools, and fintech.",
+  sub: "Software engineer working end to end across web, mobile app, and applied AI/ML, self-taught and focused on shipping things that work. I've launched Classence, an all-inclusive personalized learning platform, plus several other live products spanning realtime dashboards, AI tools, and fintech.",
 }
 
 // Bio text carried over from the existing site's Contact/About copy.
