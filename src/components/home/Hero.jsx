@@ -42,7 +42,7 @@ export default function Hero() {
         />
       </div>
 
-      <p className="mt-6 max-w-xl text-base leading-relaxed text-[var(--text-dim)]">{heroCopy.sub}</p>
+      <p className="mt-[3px] max-w-xl text-base leading-relaxed text-[var(--text-dim)]">{heroCopy.sub}</p>
 
       <div className="mt-8 flex flex-wrap items-center gap-6">
         <Link
