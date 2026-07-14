@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
 import PageTransition from './components/layout/PageTransition'
+import ChunkErrorBoundary from './components/layout/ChunkErrorBoundary'
 
 // Route-level code splitting: each page (and anything heavy it pulls in,
 // e.g. ProjectDetail's syntax highlighter) only downloads when visited.
@@ -23,9 +24,11 @@ function Layout() {
     <div className="flex min-h-screen flex-col">
       <Navbar />
       <main className="flex-1">
-        <Suspense fallback={<RouteFallback />}>
-          <Outlet />
-        </Suspense>
+        <ChunkErrorBoundary>
+          <Suspense fallback={<RouteFallback />}>
+            <Outlet />
+          </Suspense>
+        </ChunkErrorBoundary>
       </main>
       <Footer />
     </div>
@@ -38,6 +41,13 @@ export default function App() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [location.pathname])
+
+  // A successful render means we're not stuck in a chunk-load failure —
+  // reset so a future stale-chunk error (after the next deploy) can
+  // still trigger one auto-reload in this tab.
+  useEffect(() => {
+    sessionStorage.removeItem('chunk-reload-attempted')
+  }, [])
 
   return (
     <AnimatePresence mode="wait" initial={false}>

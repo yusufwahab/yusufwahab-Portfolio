@@ -14,7 +14,7 @@ export default function SystemsBoard() {
       </Reveal>
       <Reveal index={1}>
         <h2 className="mb-10 max-w-xl text-2xl font-semibold tracking-tight text-[var(--text)] sm:text-3xl">
-          Six shipped products, live right now.
+          Shipped products, live right now.
         </h2>
       </Reveal>
 

@@ -52,7 +52,7 @@ export default function Hero() {
         <img
           src={profile.portrait}
           alt={profile.fullName}
-          className="order-first aspect-[4/5] w-full max-w-[220px] border border-[var(--line)] object-cover sm:order-last sm:max-w-none lg:max-w-none"
+          className="order-first mx-auto aspect-[4/5] w-[calc(100%-2.5rem)] border border-[var(--line)] object-cover sm:order-last sm:mx-0 sm:w-full sm:max-w-none lg:max-w-none"
         />
       </div>
 

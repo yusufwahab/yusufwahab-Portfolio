@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import clsx from 'clsx'
+import { HiOutlineBars3, HiOutlineXMark } from 'react-icons/hi2'
 import StatusDot from './StatusDot'
 import { useTheme } from '../../hooks/useTheme'
 import { profile } from '../../data/profile'
@@ -72,12 +73,13 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="cursor-pointer font-mono text-xs uppercase tracking-widest text-[var(--text)] sm:hidden"
+          className="cursor-pointer text-[var(--text)] sm:hidden"
           aria-expanded={menuOpen}
           aria-controls="mobile-nav"
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           onClick={() => setMenuOpen((v) => !v)}
         >
-          {menuOpen ? 'Close' : 'Menu'}
+          {menuOpen ? <HiOutlineXMark className="h-6 w-6" /> : <HiOutlineBars3 className="h-6 w-6" />}
         </button>
       </div>
 
