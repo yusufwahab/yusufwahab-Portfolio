@@ -36,7 +36,7 @@ export const heroCopy = {
 // Bio text carried over from the existing site's Contact/About copy.
 export const bio = [
   "I'm a software engineer focused on full-stack web and mobile app development, skilled in React, Next.js, TypeScript, Node.js, Python, PostgreSQL, React Native, and Flutter. I'm currently studying Metallurgical & Materials Engineering at the University of Lagos. I crossed disciplines by choice, and I bring an engineer's rigour to every line of code I write.",
-  "Self-taught from the ground up, I build complete digital products, from pixel-perfect frontends and robust backends to cross-platform mobile apps. I've won two hackathons, shipped real products, and I'm always open to new opportunities, collaborations, or just a good conversation about tech.",
+  "Self-taught from the ground up, I build complete digital products, from pixel-perfect frontends and robust backends to cross-platform mobile apps. I've won five hackathons, shipped real products, and I'm always open to new opportunities, collaborations, or just a good conversation about tech.",
 ]
 
 export const experience = [
